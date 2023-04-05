@@ -1,4 +1,5 @@
 import REPL.TerminalMenus as TM
+import YAML
 
 const ESC = Char(0x1B)
 const HIDE_CURSOR = ESC * "[?25l"
@@ -7,111 +8,41 @@ const CLEAR_SCREEN = ESC * "[2J"
 const MOVE_CURSOR_TO_ORIGIN = ESC * "[H"
 const CLEAR_SCREEN_BEFORE_CURSOR = ESC * "[1J"
 
-function start()
-    welcome_player()
+function create_scene_graph(file_name)
+    contents = YAML.load_file(file_name)
 
-    return nothing
+    scene_graph = Dict{Any, Any}()
+
+    for scene in contents["scenes"]
+        scene_graph[scene["name"]] = scene
+    end
+
+    return scene_graph
 end
 
-function welcome_player()
-    print(CLEAR_SCREEN)
-    print(MOVE_CURSOR_TO_ORIGIN)
+function run_scene_graph(scene_graph, start_scene_name, end_scene_name)
+    scene_name = start_scene_name
 
-    println("Enter the name of your character:")
-    character_name = readline()
-    println("Welcome to this game, $(character_name)!")
+    while scene_name != end_scene_name
+        scene = scene_graph[scene_name]
 
-    println("Press enter to continue...")
-    readline()
+        scene_text = scene["text"]
 
-    cave_entrance()
+        print(CLEAR_SCREEN)
+        print(MOVE_CURSOR_TO_ORIGIN)
+        println(scene_text)
 
-    return nothing
-end
+        choices = scene["choices"]
+        choice = TM.request(TM.RadioMenu([choice["text"] for choice in choices]))
 
-function cave_entrance()
-    print(CLEAR_SCREEN)
-    print(MOVE_CURSOR_TO_ORIGIN)
-
-    println("You find yourself standing at the entrance to a mysterious cave. Choose wisely. Do you:")
-
-    choices = [
-        "Enter the cave to explore its secrets",
-        "Turn around and run away as fast as you can",
-    ]
-
-    choice = TM.request(TM.RadioMenu(choices))
-
-    if choice == 1
-        error("Not implemented")
-    elseif choice == 2
-        run_into_bear()
-    else
-        error("Invalid choice!")
+        scene_name = choices[choice]["next_scene"]
     end
 
     return nothing
 end
 
-function run_into_bear()
-    print(CLEAR_SCREEN)
-    print(MOVE_CURSOR_TO_ORIGIN)
+story_file_name = ARGS[1]
 
-    println("You turn around and run away as fast as you can. And you accidentally run into a bear. Do you:")
+scene_graph = create_scene_graph(story_file_name)
 
-    choices = [
-        "Stay calm",
-        "Shout at the bear",
-    ]
-
-    choice = TM.request(TM.RadioMenu(choices))
-
-    if choice == 1
-        stay_calm()
-    elseif choice == 2
-        shout_at_bear()
-    else
-        error("Invalid choice!")
-    end
-
-    return nothing
-end
-
-function stay_calm()
-    print(CLEAR_SCREEN)
-    print(MOVE_CURSOR_TO_ORIGIN)
-
-    println("You try to stay calm. And the bear looks at you and suddently places a hand on your shoulder. And tries to walk you towards the cave.")
-
-    println("Press enter to continue...")
-    readline()
-
-    enter_cave()
-
-    return nothing
-end
-
-function shout_at_bear()
-    print(CLEAR_SCREEN)
-    print(MOVE_CURSOR_TO_ORIGIN)
-
-    println("You involuntarily shout at the bear before realizing what you just did. The bear get scared and screams, which in turn scares you and you faint thinking that the bear will attack you. The bear then picks up your body and starts carrying you towards the cave.")
-
-    println("Press enter to continue...")
-    readline()
-
-    enter_cave()
-
-    return nothing
-end
-
-function enter_cave()
-    print(CLEAR_SCREEN)
-    print(MOVE_CURSOR_TO_ORIGIN)
-
-    println("You enter the cave and dance with bears and happy ending")
-
-    return nothing
-end
-
-start()
+run_scene_graph(scene_graph, "start_scene", "end_scene")
