@@ -5,42 +5,188 @@ scenes:
       - text: Press enter to exit...
         next_scene: end_scene
 
-  - name: enter_cave
-    text: You enter the cave and dance with bears and happy ending
+  - name: start_scene
+    text: Disclaimer...
+    choices:
+      - text: Press enter to continue...
+        next_scene: first_counter
+
+  - name: first_counter
+    text: Welcome to DMV! How can I help you?
+    choices:
+      - text: I am here for my in-car driving test appointment.
+        next_scene: doc_verification
+      - text: By giving me a lot of money?
+        next_scene: surprized_attendant
+
+  - name: surprized_attendant
+    text: What do you mean?
+    choices:
+      - text: Give me all the money you got! Now!
+        next_scene: attempt_robbery
+      - text: I was just kidding. I'm obviously here for my car driving test appointment.
+        next_scene: doc_verification
+
+  - name: attempt_robbery
+    text: But Sir, this is not a bank. It is the DMV.
+    choices:
+      - text: Oops? Wrong place. My bad. Can I instead give a driving test please?
+        next_scene: doc_verification
+      - text: I don't care. I would still like to rob the place.
+        next_scene: ending_in_jail
+
+  - name: ending_in_jail
+    text: You end up in jail! Too bad. You failed the test.
     choices:
       - text: Press enter to exit...
         next_scene: end_scene
 
-  - name: start_scene
-    text: Welcome to this game!
+  - name: doc_verification
+    text: Sure. Please hand me your documents
+    choices:
+      - text: Press enter to provide documents...
+        next_scene: docs_verified
+
+  - name: docs_verified
+    text: Your documents seem fine. Please bring your car to the waiting area.
     choices:
       - text: Press enter to continue...
-        next_scene: cave_entrance
+        next_scene: waiting_for_instructor
 
-  - name: cave_entrance
-    text: "You find yourself standing at the entrance to a mysterious cave. Choose wisely. Do you:"
-    choices:
-      - text: Enter the cave to explore its secrets
-        next_scene: error
-      - text: Turn around and run away as fast as you can
-        next_scene: run_into_bear
-
-  - name: run_into_bear
-    text: "You turn around and run away as fast as you can. And you accidentally run into a bear. Do you:"
-    choices:
-      - text: Stay calm
-        next_scene: stay_calm
-      - text: Shout at the bear
-        next_scene: shout_at_bear
-
-  - name: stay_calm
-    text: You try to stay calm. And the bear looks at you and suddently places a hand on your shoulder. And tries to walk you towards the cave.
+  - name: waiting_for_instructor
+    text: You take your car to waiting area and wait for your turn to come.
     choices:
       - text: Press enter to continue...
-        next_scene: enter_cave
+        next_scene: your_turn
 
-  - name: shout_at_bear
-    text: You involuntarily shout at the bear before realizing what you just did. The bear get scared and screams, which in turn scares you and you faint thinking that the bear will attack you. The bear then picks up your body and starts carrying you towards the cave.
+  - name: your_turn
+    text: You become nervous and as you go towards the front of the line, you almost bump into the instructor as he moves towards you.
+    choices:
+      - text: Correct the instructor (gently) for moving towards you from the front instead of the side.
+        next_scene: correct_the_instructor_gently
+      - text: Correct the instructor (aggressively) for moving towards you from the front instead of the side.
+        next_scene: correct_the_instructor_aggressively
+      - text: Apologize immediately.
+        next_scene: apologize_to_instructor
+
+  - name: apologize_to_instructor
+    text: The instructor looks at you disappointingly and stands beside your open window.
+    choices:
+      - text: Greet the instructor with a handshake.
+        next_scene: handshake
+      - text: Attempt to hug the instructor.
+        next_scene: hug
+
+  - name: handshake
+    text: The instructor awkwardly shakes your hand and gets into the car with you.
     choices:
       - text: Press enter to continue...
-        next_scene: enter_cave
+        next_scene: start_test
+
+  - name: hug
+    text: The instructor steps back and looks at you with confusion and concern.
+    choices:
+      - text: Apologize and try to shake his hand.
+        next_scene: handshake
+      - text: Insist on giving the instructor a hug.
+        next_scene: ending_in_embarrassment
+
+  - name: ending_in_embarrassment
+    text: The instructor is creeped out by your behavior and calls off the driving test.
+    choices:
+      - text: Leave the DMV feeling embarrassed and ashamed...
+        next_scene: end_scene
+
+  - name: correct_the_instructor_gently
+    text: The instructor looks at you incredulously and tells you to relax before getting into the car.
+    choices:
+      - text: Press enter to continue...
+        next_scene: start_test
+
+  - name: correct_the_instructor_aggressively
+    text: The instructor is surprized and starts arguing with you.
+    choices:
+      - text: Argue with the instructor about the proper way to approach a driver
+        next_scene: argument_with_instructor
+      - text: Apologize and try to make amends
+        next_scene: start_test
+
+  - name: argument_with_instructor
+    text: The instructor gets frustrated and refuses to give you the driving test.
+    choices:
+      - text: Beg the instructor for forgiveness.
+        next_scene: instructor_forgives_you
+      - text: Storm out of the DMV and vow to never return.
+        next_scene: ending_in_anger
+
+  - name: instructor_forgives_you
+    text: Instructor forgives you and sits in the car.
+    choices:
+      - text: Press enter to continue...
+        next_scene: start_test
+
+  - name: ending_in_anger
+    text: You hold on to your vow and never return back. Hence you never get a driving license.
+    choices:
+      - text: Rely on your friends and public transport for your entire life...
+        next_scene: end_scene
+
+  - name: start_test
+    text: You start the car and the instructor tells you to drive around the block.
+    choices:
+      - text: Drive cautiously.
+        next_scene: cautious_driving
+      - text: Drive recklessly.
+        next_scene: reckless_driving
+
+  - name: cautious_driving
+    text: You drive carefully and follow all traffic rules. The instructor seems satisfied.
+    choices:
+      - text: Press enter to continue...
+        next_scene: parking_test
+
+  - name: reckless_driving
+    text: You speed through the streets and almost hit a pedestrian. The instructor screams and tells you to pull over.
+    choices:
+      - text: Apologize and try to make amends.
+        next_scene: ending_apology_not_accepted
+      - text: Argue with the instructor and refuse to admit fault.
+        next_scene: ending_instructor_is_angry
+
+  - name: ending_apology_not_accepted
+    text: The instructor tells you that you need to be careful. Unfortunately, this mistake alone is enough to fail you.
+    choices:
+      - text: Press enter to continue...
+        next_scene: end_scene
+
+  - name: ending_instructor_is_angry
+    text: The instructor angrily fails you.
+    choices:
+      - text: Press enter to continue...
+        next_scene: end_scene
+
+  - name: parking_test
+    text: The instructor tells you to park the car parallel to the curb.
+    choices:
+      - text: Park perfectly.
+        next_scene: perfect_parking
+      - text: Park terribly.
+        next_scene: terrible_parking
+
+  - name: terrible_parking
+    text: You hit the curb and scratch the side of your car. The instructor tells you that you've failed.
+    choices:
+      - text: Press enter to go back and practice parallel parking...
+        next_scene: end_scene
+
+  - name: perfect_parking
+    text: Congratulations! You passed your driving test and can now legally hit the streets. Just make sure to hug your instructor next time, okay?
+    choices:
+      - text: Press enter to exit...
+        next_scene: passed_parking_test
+
+  - name: passed_parking_test
+    text: You nail the parking test and the instructor tells you that you've passed!
+    choices:
+      - text: Celebrate and drive off into the sunset.
+        next_scene: end_scene
