@@ -1,0 +1,46 @@
+scenes:
+  - name: error
+    text: Error!
+    choices:
+      - text: Press enter to exit...
+        next_scene: end_scene
+
+  - name: enter_cave
+    text: You enter the cave and dance with bears and happy ending
+    choices:
+      - text: Press enter to exit...
+        next_scene: end_scene
+
+  - name: start_scene
+    text: Welcome to this game!
+    choices:
+      - text: Press enter to continue...
+        next_scene: cave_entrance
+
+  - name: cave_entrance
+    text: "You find yourself standing at the entrance to a mysterious cave. Choose wisely. Do you:"
+    choices:
+      - text: Enter the cave to explore its secrets
+        next_scene: error
+      - text: Turn around and run away as fast as you can
+        next_scene: run_into_bear
+
+  - name: run_into_bear
+    text: "You turn around and run away as fast as you can. And you accidentally run into a bear. Do you:"
+    choices:
+      - text: Stay calm
+        next_scene: stay_calm
+      - text: Shout at the bear
+        next_scene: shout_at_bear
+
+  - name: stay_calm
+    text: You try to stay calm. And the bear looks at you and suddently places a hand on your shoulder. And tries to walk you towards the cave.
+    choices:
+      - text: Press enter to continue...
+        next_scene: enter_cave
+
+  - name: shout_at_bear
+    text: You involuntarily shout at the bear before realizing what you just did. The bear get scared and screams, which in turn scares you and you faint thinking that the bear will attack you. The bear then picks up your body and starts carrying you towards the cave.
+    choices:
+      - text: Press enter to continue...
+        next_scene: enter_cave
