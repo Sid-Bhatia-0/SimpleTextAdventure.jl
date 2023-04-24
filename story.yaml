@@ -1,46 +1,535 @@
 scenes:
-  - name: error
-    text: Error!
-    choices:
-      - text: Press enter to exit...
-        next_scene: end_scene
-
-  - name: enter_cave
-    text: You enter the cave and dance with bears and happy ending
-    choices:
-      - text: Press enter to exit...
-        next_scene: end_scene
-
   - name: start_scene
-    text: Welcome to this game!
-    choices:
-      - text: Press enter to continue...
-        next_scene: cave_entrance
+    text: |
+      ****************
+      ***DISCLAIMER***
+      ****************
 
-  - name: cave_entrance
-    text: "You find yourself standing at the entrance to a mysterious cave. Choose wisely. Do you:"
-    choices:
-      - text: Enter the cave to explore its secrets
-        next_scene: error
-      - text: Turn around and run away as fast as you can
-        next_scene: run_into_bear
+      This is just a game. Obviously. So treat it like one. Definitely don't attempt to apply anything you see in this game to the real world. You may be surprized. It may not work as you expect.
 
-  - name: run_into_bear
-    text: "You turn around and run away as fast as you can. And you accidentally run into a bear. Do you:"
-    choices:
-      - text: Stay calm
-        next_scene: stay_calm
-      - text: Shout at the bear
-        next_scene: shout_at_bear
+      Also, this game is not meant to hurt anyone. The human co-author of this game is not responsible for anything bad that happens as a result of you playing this game.
 
-  - name: stay_calm
-    text: You try to stay calm. And the bear looks at you and suddently places a hand on your shoulder. And tries to walk you towards the cave.
+      If you understand this and want to continue playing at your own risk, then please by my guest!
     choices:
-      - text: Press enter to continue...
-        next_scene: enter_cave
+      - text: Yes. I'm up for it. Take me to the game. I'm already enjoying this.
+        next_scene: introduction
+      - text: No. I think I can live without knowing what's in the game. I would like to exit the game. Please.
+        next_scene: end_scene
 
-  - name: shout_at_bear
-    text: You involuntarily shout at the bear before realizing what you just did. The bear get scared and screams, which in turn scares you and you faint thinking that the bear will attack you. The bear then picks up your body and starts carrying you towards the cave.
+  - name: introduction
+    text: |
+      You have an appointment for a car driving test today at TOTPADLATAT (The Organization That Provides A Driving License After Taking A Test).
+
+      Your friends have been helping you practice for some time now, always being by your side (quite literally, in the passenger seat).
+
+      You reach the test location along with a friend, fully prepared to crush it this time, unlike some of your previous attempts... 
+
+      You ask your friend to go back, assuring that you will get a license this time and drive the car back on your own, like a champion. Your friend has faith in you.
+
+      You still feel a little nervous though. You walk into the office and wait in the first line you see.
+
+      There you stand. Alone. With strangers around you.
+
+      Your turn comes soon.
     choices:
-      - text: Press enter to continue...
-        next_scene: enter_cave
+      - text: Walk up to the counter
+        next_scene: first_counter
+      - text: Chicken out
+        next_scene: chicken_out
+
+  - name: first_counter
+    text: The attendant greets you with "Welcome to TOTPADLATAT! How can I help you today?"
+    choices:
+      - text: "\"I have an appointment for an in-car driving test\""
+        next_scene: doc_verification
+      - text: "\"By giving me a lot of money\""
+        next_scene: surprized_attendant
+
+  - name: doc_verification
+    text: "\"Sure thing. Can you please hand me your documents?\", the attendant asks."
+    choices:
+      - text: Hand over the relevant documents
+        next_scene: docs_verified
+
+  - name: docs_verified
+    text: The attendant says "Your documents seem fine. Your appointment is all set. Please bring your car to the test starting point just behind this office."
+    choices:
+      - text: Drive your car to the test point
+        next_scene: waiting_for_instructor
+
+  - name: waiting_for_instructor
+    text: You take your car to the back side of the building where you notice a few cars already in line. You move your card to the end of the queue.
+    choices:
+      - text: Wait for your turn to come...
+        next_scene: your_turn
+
+  - name: your_turn
+    text: |
+      Your nervousness creeps up again as your turn approaches.
+
+      But this time, you won't let it interfere.
+
+      It is finally your turn to move to the front of the line. As you are thinking about pushing away the nervousness, your feet accidentally push the accelerator a little too hard.
+
+      You almost bump the car into the instructor as he moves towards you.
+    choices:
+      - text: Apologize immediately
+        next_scene: apologize_to_instructor
+      - text: Aggressively correct the instructor for his mistake
+        next_scene: correct_the_instructor_aggressively
+
+  - name: apologize_to_instructor
+    text: The instructor looks at you disappointingly and stands beside your open window.
+    choices:
+      - text: Greet the instructor with a handshake
+        next_scene: handshake
+      - text: Attempt to hug the instructor
+        next_scene: hug
+
+  - name: handshake
+    text: The instructor awkwardly shakes your hand and gets into the car with you.
+    choices:
+      - text: Begin test...
+        next_scene: start_test
+
+  - name: start_test
+    text: You start the car and the instructor tells you to drive around the block.
+    choices:
+      - text: Drive cautiously
+        next_scene: cautious_driving
+      - text: Drive recklessly
+        next_scene: reckless_driving_crashing_with_alien
+
+  - name: cautious_driving
+    text: You drive carefully and follow all traffic rules. The instructor seems satisfied.
+    choices:
+      - text: Keep driving
+        next_scene: parking_test
+
+  - name: parking_test
+    text: The instructor tells you to park the car parallel to the curb.
+    choices:
+      - text: Park perfectly
+        next_scene: perfect_parking
+      - text: Park terribly
+        next_scene: terrible_parking
+
+  - name: perfect_parking
+    text: |
+      You park the car quite well.
+
+      You remember to put the gears into parking and pull the hand brake.
+
+      The instructor is pleased. Then he asks you to move on.
+    choices:
+      - text: Continue driving
+        next_scene: going_back
+
+  - name: going_back
+    text: |
+      The instructor then guides you back to the TOTPADLATAT.
+
+      When you reach there, he tells you that you've passed.
+
+      He asks you to come to the office to collect your temporary driving license.
+    choices:
+      - text: Follow the instructor to the office
+        next_scene: get_license
+
+  - name: get_license
+    text: |
+      The instructor asks you to wait while he gets over with some paperwork.
+
+      He comes back with a piece of paper and hands it to you, informing you that you will receive your actual license in the mail within a couple of weeks.
+    choices:
+      - text: Take the temporary license and get back to your car
+        next_scene: nailed_it
+
+  - name: nailed_it
+    text: |
+      Congratulations! You nailed it this time.
+
+      Wasn't that easy?
+
+      A little too easy perhaps...
+    choices:
+      - text: Drive off into the sunset to celebrate your success
+        next_scene: end_scene
+
+  - name: passed_parking_test
+    text: You nail the parking test and the instructor tells you that you've passed!
+    choices:
+      - text: Celebrate and drive off into the sunset...
+        next_scene: end_scene
+
+  - name: terrible_parking
+    text: |
+      As you move towards the curb, the front side of your car hits the curb pretty hard.
+
+      The car stops with a jerk.
+
+      But you are determined.
+
+      So you turn your wheel and keep going.
+
+      This produces a screeching sound. Not a good sign.
+
+      Nevertheless, you somehow manage to park the vehicle.
+
+      It isn't parallel to the curb. But that is not the most pressing concern anymore.
+    choices:
+      - text: Look at the instructor like nothing happened
+        next_scene: instructor_look
+
+  - name: instructor_look
+    text: |
+      The instructor stays calm. Unsurprisingly perhaps. Because it is not his vehicle.
+
+      And in a matter of factly tone, says..."You know you messed it up, right?"
+
+      He then asks you to contine driving and guides you back to the TOTPADLATAT.
+    choices:
+      - text: Keep driving as he says
+        next_scene: go_back_failed
+
+  - name: go_back_failed
+    text: |
+      Once you reach there, he asks you to practice more before next time.
+
+      You failed... follow the instructor's advice for next time. Okay?
+    choices:
+      - text: Call your friend to come pick you up along with the car
+        next_scene: end_scene
+
+  - name: reckless_driving_crashing_with_alien
+    text: |
+      For some reason (boredom) you choose to drive recklessly.
+
+      Suddenly, an alien spaceship appears in front of you.
+    choices:
+      - text: Swerve the car to avoid the spaceship
+        next_scene: swerve_away
+      - text: Hit the spaceship head-on
+        next_scene: hit_spaceship
+
+  - name: swerve_away
+    text: |
+      You swerve the car, narrowly avoiding the spaceship.
+
+      The instructor looks at you in shock, but you keep driving.
+
+      As you turn the corner, you see the spaceship flying away.
+    choices:
+      - text: Pull over and try to catch your breath
+        next_scene: pull_over
+
+  - name: pull_over
+    text: |
+      You pull over the car, and both of you take a moment to absorb what just happened.
+
+      After a minute of silence, the instructor says "Well, at least you pulled over correctly. I'm feeling lucky. Let's call it a day before my luck runs out.".
+
+      The instructor guides you back to the TOTPADLATAT and hands you your driving license.
+    choices:
+      - text: Accept it and rejoice!
+        next_scene: end_scene
+
+  - name: hit_spaceship
+    text: |
+      You hit the spaceship head-on, and it explodes in a ball of fire.
+
+      The instructor jumps out of the car, yelling, "What the hell was that?!".
+
+      As you get out of the car, you see a small green alien stumble out of the wreckage.
+    choices:
+      - text: Apologize to the alien for hitting its spaceship
+        next_scene: apologize_alien
+      - text: Run away from the scene
+        next_scene: run_away
+
+  - name: apologize_alien
+    text: |
+      You approach the alien and apologize for hitting its spaceship.
+
+      The alien looks at you, then starts laughing uncontrollably. "Oh, you Earthlings are hilarious!" it says. "I wasn't even driving that thing! I just borrowed it from my friend Zorgon!"
+    choices:
+      - text: Offer to give the alien a ride to wherever it needs to go
+        next_scene: give_alien_ride
+      - text: Offer the alien help with fixing the spaceship
+        next_scene: help_fix_spaceship
+
+  - name: help_fix_spaceship
+    text: |
+      You offer help to fix the mess that was caused partly by you.
+
+      The instructor looks at you like you're crazy, but the alien is thrilled.
+
+      The alien laughs and says, "Sure thing, Earthling!".
+
+      It takes you to the remains of its spaceship, which is still smoldering on the ground. 
+
+      It graciously accepts your help and together you both fix some of the critical components that bring the spaceship back to a working condition.
+
+      It then offers you a ride in the spaceship as thanks for helping fix it.
+    choices:
+      - text: Accept and go for a ride on the spaceship
+        next_scene: go_for_ride
+
+  - name: give_alien_ride
+    text: |
+      The alien gets into your car, and you start driving.
+
+      The instructor looks at you like you're crazy, but the alien is thrilled.
+
+      It tells you stories about its adventures on other planets, and you can't help but laugh at its jokes.
+
+      As you drop the alien off at its destination, it thanks you and gives you a strange, glowing rock as a gift.
+    choices:
+      - text: Thank the alien and continue with your driving test
+        next_scene: instructor_acknowledges_skill
+
+  - name: instructor_acknowledges_skill
+    text: |
+      With that, you ask the instructor what to do next.
+
+      Instructor informs you that you already successfully completed all the components involved in the test as you were dropping off the alien.
+
+      Plus he thinks that you also did a good deed. So he is pleased.
+
+      The instructor guides you back to the TOTPADLATAT and hands you your driving license.
+    choices:
+      - text: Thank the instructor and feel proud of yourself
+        next_scene: end_scene
+
+  - name: go_for_ride
+    text: |
+      Once the spaceship is fixed, the alien climbs into the cockpit and motions for you to sit in the co-pilot's seat.
+
+      You blast off into space, and the sensation of weightlessness takes your breath away.
+
+      As you look out the window, you see stars, planets, and galaxies that you never even knew existed.
+    choices:
+      - text: Enjoy the ride and ask the alien for a space souvenir
+        next_scene: space_souvenir
+      - text: Panic and ask the alien to take you back to Earth
+        next_scene: back_to_earth_panic
+
+  - name: space_souvenir
+    text: The alien laughs and hands you a small, glowing rock... "Here you go, Earthling. This is a rare mineral from my home planet. It's supposed to bring good luck!"
+
+      You thank the alien and put the rock in your pocket.
+
+      As you head back to Earth, you realize that this has been the craziest driving test ever.
+    choices:
+      - text: Thank the alien
+        next_scene: back_to_earth_fun
+
+  - name: back_to_earth_fun
+    text: |
+      Let the alien know that you had a wonderful time.
+
+      And that it is welcome to hang out with you whenever it wants.
+    choices:
+      - text: Thank the alien once again
+        next_scene: forgot_about_test_but_had_fun
+
+  - name: forgot_about_test_but_had_fun
+    text: You forgot about your car and the driving test. But you had a lot of fun.
+    choices:
+      - text: Book another the driving test slot, secretly hoping for another adventure...
+        next_scene: end_scene
+
+  - name: back_to_earth_panic
+    text: You feel sick as soon as you land. The alien informs you that this is normal. You will feel better after resting.
+    choices:
+      - text: Go back home and rest as alien suggested
+        next_scene: go_back_home_and_rest
+
+  - name: go_back_home_and_rest
+    text: |
+      You don't think it is a good idea to continue the test.
+
+      You inform the instructor who was surprisingly waiting for you back on land.
+
+      You request him to drop you home. He is kind enough to oblige and asks you to take care.
+
+      You think to yourself that even though you did not pass the test, it was a hell of an experience.
+    choices:
+      - text: Lie on your bed, drifting into sleep...
+        next_scene: end_scene
+
+  - name: run_away
+    text: |
+      The crash was pretty bad.
+
+      And even though it was technically the alien's fault, you do not want to wait and find out what happens. 
+    choices:
+      - text: Maneuver your car as fast as you can out of the rubble to make an escape
+        next_scene: insurance
+
+  - name: insurance
+    text: Even though this was the craziest experience of your life so far, you couldn't help but wonder about something... so you ask your instructor, who was still speechless from the shock
+    choices:
+      - text: "\"Do you think that would be covered by the insurance?\""
+        next_scene: alien_chases
+
+  - name: alien_chases
+    text: |
+      The instructor looks at you and says "Why don't we find out? Let's go back to the alien and discuss."
+
+      You ignore the instructor's sarcasm when you notice that the alien is chasing after you on foot. You think to yourself, of course it can run fast.
+
+      You want to speed up to escape the alien, but you don't wanna fail your driving test. So you carefully stay within the speed limit.
+    choices:
+      - text: Attempt to accelerate beyond the speed limit
+        next_scene: accelerate
+      - text: Stay within the speed limit
+        next_scene: within_speed_limit
+
+  - name: accelerate
+    text: |
+      The instruct shouts, "What are you doing? You know the speed limit is 40 miles per hour, right? You are already at the speed limit. If you go any further, I will have to fail you.".
+
+      After hearing this, you accept your fate and keep driving at the speed limit.
+
+      Obviously, the alien catches up.
+
+      Instead of blasting off your vehicle as you feared, it signals you to pull over instead.
+    choices:
+      - text: Pull over
+        next_scene: pull_over_alien
+
+  - name: pull_over_alien
+    text: |
+      The alien stands by your window.
+
+      And it apologizes to you for crashing with you earlier.
+
+      You are relieved that the alien wasn't following you to blast you off for crashing with the spaceship.
+    choices:
+      - text: Offer to give the alien a ride to wherever it needs to go
+        next_scene: give_alien_ride
+      - text: Ask the alien if it can take you for a ride in its spaceship
+        next_scene: go_for_ride
+
+  - name: hug
+    text: The instructor steps back and looks at you with confusion and concern.
+    choices:
+      - text: Apologize and try to shake his hand
+        next_scene: handshake
+      - text: Insist on giving the instructor a hug
+        next_scene: ending_in_embarrassment
+
+  - name: ending_in_embarrassment
+    text: The instructor is creeped out by your behavior and calls off the driving test.
+    choices:
+      - text: Leave the TOTPADLATAT feeling embarrassed
+        next_scene: end_scene
+
+  - name: correct_the_instructor_aggressively
+    text: The instructor looks at you incredulously starts arguing with you telling you that you went too fast.
+    choices:
+      - text: Argue back with the instructor about the proper way to approach a driver
+        next_scene: argument_with_instructor
+      - text: Apologize and try to make amends
+        next_scene: start_test
+
+  - name: argument_with_instructor
+    text: The instructor gets frustrated and refuses to give you the driving test.
+    choices:
+      - text: Beg the instructor for forgiveness
+        next_scene: instructor_forgives_you
+      - text: Storm out of the TOTPADLATAT and vow to never return
+        next_scene: ending_in_anger
+
+  - name: instructor_forgives_you
+    text: Instructor forgives you and sits in the car.
+    choices:
+      - text: Awkward silence...
+        next_scene: start_test
+
+  - name: ending_in_anger
+    text: You hold on to your vow and never return back. Hence you never get a driving license.
+    choices:
+      - text: Rely on your friends and public transport for your entire life...
+        next_scene: end_scene
+
+  - name: surprized_attendant
+    text: "\"Excuse me!? What do you mean?\", the attendant exclaims."
+    choices:
+      - text: "\"Give me all the money you got! Now!\""
+        next_scene: attempt_robbery
+      - text: "\"I was just kidding. I'm obviously here for my car driving test appointment.\""
+        next_scene: doc_verification
+
+  - name: attempt_robbery
+    text: The attendant says in a concerning voice "But Sir, this is not a bank. It is the TOTPADLATAT."
+    choices:
+      - text: "\"Oops? Wrong place. My bad. Can I instead give a driving test please?\""
+        next_scene: doc_verification
+      - text: "\"I don't care. I would still like to rob the place.\""
+        next_scene: ending_in_jail
+
+  - name: ending_in_jail
+    text: |
+      Since your face doesn't look scary enough, the attendant calls the police right in front of you and you eventually end up in jail.
+
+      Too bad. You failed the test. Maybe next time don't try to rob the TOTPADLATAT.
+    choices:
+      - text: Spend time in jail
+        next_scene: end_scene
+
+  - name: chicken_out
+    text: |
+      Your nervousness is interfering with your decision making skills.
+
+      You start questioning your decision to take the driving test and wonder if you really need a driving license in the first place.
+
+      You also remember that the fees has already been paid, and that it is non-refundable.
+
+      Act fast. Or not. The officer is calling you to come forward.
+    choices:
+      - text: Walk up to the counter to not let the fees go to waste
+        next_scene: first_counter
+      - text: Turn around and start walking away
+        next_scene: walk_away
+
+  - name: walk_away
+    text: |
+      Your nervousness gets the better of you.
+
+      You feel overwhelmed. You turn around and start walking away.
+
+      The officer stops calling you and the lady behind you in line moves forward to the counter.
+
+      You reach out for the door handle.
+    choices:
+      - text: Exit the place
+        next_scene: give_up_without_trying
+      - text: Remind yourself of all your favourite anime characters and how they don't give up no matter what
+        next_scene: remind_anime
+
+  - name: give_up_without_trying
+    text: You exit the door feeling ashamed of yourself. But you also promise to yourself that you will try harder next time. 
+    choices:
+      - text: Awkwardly call your friend to come and pick you up...
+        next_scene: end_scene
+
+  - name: remind_anime
+    text: |
+      You remind yourself of all the anime that you watched.
+
+      Your favourite anime characters always keep persisiting and never give up no matter what.
+
+      "I can do it! I am not the same weak kid that I used to be.", you say to yourself.
+
+      Hell yeah!
+    choices:
+      - text: Go back and stand in the queue to wait for your turn
+        next_scene: first_counter
+
+  - name: error
+    text: Sorry. This scene is not implemented yet.
+    choices:
+      - text: Press enter to exit the game...
+        next_scene: end_scene
