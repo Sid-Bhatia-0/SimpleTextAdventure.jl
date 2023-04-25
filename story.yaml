@@ -1,6 +1,6 @@
 scenes:
   - name: start_scene
-    text: |
+    text: |-
       ****************
       ***DISCLAIMER***
       ****************
@@ -10,6 +10,7 @@ scenes:
       Also, this game is not meant to hurt anyone. The human co-author of this game is not responsible for anything bad that happens as a result of you playing this game.
 
       If you understand this and want to continue playing at your own risk, then please by my guest!
+
     choices:
       - text: Yes. I'm up for it. Take me to the game. I'm already enjoying this.
         next_scene: introduction
@@ -17,7 +18,7 @@ scenes:
         next_scene: end_scene
 
   - name: introduction
-    text: |
+    text: |-
       You have an appointment for a car driving test today at TOTPADLATAT (The Organization That Provides A Driving License After Taking A Test).
 
       Your friends have been helping you practice for some time now, always being by your side (quite literally, in the passenger seat).
@@ -64,7 +65,7 @@ scenes:
         next_scene: your_turn
 
   - name: your_turn
-    text: |
+    text: |-
       Your nervousness creeps up again as your turn approaches.
 
       But this time, you won't let it interfere.
@@ -115,7 +116,7 @@ scenes:
         next_scene: terrible_parking
 
   - name: perfect_parking
-    text: |
+    text: |-
       You park the car quite well.
 
       You remember to put the gears into parking and pull the hand brake.
@@ -126,7 +127,7 @@ scenes:
         next_scene: going_back
 
   - name: going_back
-    text: |
+    text: |-
       The instructor then guides you back to the TOTPADLATAT.
 
       When you reach there, he tells you that you've passed.
@@ -137,7 +138,7 @@ scenes:
         next_scene: get_license
 
   - name: get_license
-    text: |
+    text: |-
       The instructor asks you to wait while he gets over with some paperwork.
 
       He comes back with a piece of paper and hands it to you, informing you that you will receive your actual license in the mail within a couple of weeks.
@@ -146,7 +147,7 @@ scenes:
         next_scene: nailed_it
 
   - name: nailed_it
-    text: |
+    text: |-
       Congratulations! You nailed it this time.
 
       Wasn't that easy?
@@ -163,7 +164,7 @@ scenes:
         next_scene: end_scene
 
   - name: terrible_parking
-    text: |
+    text: |-
       As you move towards the curb, the front side of your car hits the curb pretty hard.
 
       The car stops with a jerk.
@@ -182,7 +183,7 @@ scenes:
         next_scene: instructor_look
 
   - name: instructor_look
-    text: |
+    text: |-
       The instructor stays calm. Unsurprisingly perhaps. Because it is not his vehicle.
 
       And in a matter of factly tone, says..."You know you messed it up, right?"
@@ -193,7 +194,7 @@ scenes:
         next_scene: go_back_failed
 
   - name: go_back_failed
-    text: |
+    text: |-
       Once you reach there, he asks you to practice more before next time.
 
       You failed... follow the instructor's advice for next time. Okay?
@@ -202,7 +203,7 @@ scenes:
         next_scene: end_scene
 
   - name: reckless_driving_crashing_with_alien
-    text: |
+    text: |-
       For some reason (boredom) you choose to drive recklessly.
 
       Suddenly, an alien spaceship appears in front of you.
@@ -213,7 +214,7 @@ scenes:
         next_scene: hit_spaceship
 
   - name: swerve_away
-    text: |
+    text: |-
       You swerve the car, narrowly avoiding the spaceship.
 
       The instructor looks at you in shock, but you keep driving.
@@ -224,7 +225,7 @@ scenes:
         next_scene: pull_over
 
   - name: pull_over
-    text: |
+    text: |-
       You pull over the car, and both of you take a moment to absorb what just happened.
 
       After a minute of silence, the instructor says "Well, at least you pulled over correctly. I'm feeling lucky. Let's call it a day before my luck runs out.".
@@ -235,7 +236,7 @@ scenes:
         next_scene: end_scene
 
   - name: hit_spaceship
-    text: |
+    text: |-
       You hit the spaceship head-on, and it explodes in a ball of fire.
 
       The instructor jumps out of the car, yelling, "What the hell was that?!".
@@ -248,7 +249,7 @@ scenes:
         next_scene: run_away
 
   - name: apologize_alien
-    text: |
+    text: |-
       You approach the alien and apologize for hitting its spaceship.
 
       The alien looks at you, then starts laughing uncontrollably. "Oh, you Earthlings are hilarious!" it says. "I wasn't even driving that thing! I just borrowed it from my friend Zorgon!"
@@ -259,7 +260,7 @@ scenes:
         next_scene: help_fix_spaceship
 
   - name: help_fix_spaceship
-    text: |
+    text: |-
       You offer help to fix the mess that was caused partly by you.
 
       The instructor looks at you like you're crazy, but the alien is thrilled.
@@ -276,7 +277,7 @@ scenes:
         next_scene: go_for_ride
 
   - name: give_alien_ride
-    text: |
+    text: |-
       The alien gets into your car, and you start driving.
 
       The instructor looks at you like you're crazy, but the alien is thrilled.
@@ -289,7 +290,7 @@ scenes:
         next_scene: instructor_acknowledges_skill
 
   - name: instructor_acknowledges_skill
-    text: |
+    text: |-
       With that, you ask the instructor what to do next.
 
       Instructor informs you that you already successfully completed all the components involved in the test as you were dropping off the alien.
@@ -302,7 +303,7 @@ scenes:
         next_scene: end_scene
 
   - name: go_for_ride
-    text: |
+    text: |-
       Once the spaceship is fixed, the alien climbs into the cockpit and motions for you to sit in the co-pilot's seat.
 
       You blast off into space, and the sensation of weightlessness takes your breath away.
@@ -325,7 +326,7 @@ scenes:
         next_scene: back_to_earth_fun
 
   - name: back_to_earth_fun
-    text: |
+    text: |-
       Let the alien know that you had a wonderful time.
 
       And that it is welcome to hang out with you whenever it wants.
@@ -346,7 +347,7 @@ scenes:
         next_scene: go_back_home_and_rest
 
   - name: go_back_home_and_rest
-    text: |
+    text: |-
       You don't think it is a good idea to continue the test.
 
       You inform the instructor who was surprisingly waiting for you back on land.
@@ -359,7 +360,7 @@ scenes:
         next_scene: end_scene
 
   - name: run_away
-    text: |
+    text: |-
       The crash was pretty bad.
 
       And even though it was technically the alien's fault, you do not want to wait and find out what happens. 
@@ -374,7 +375,7 @@ scenes:
         next_scene: alien_chases
 
   - name: alien_chases
-    text: |
+    text: |-
       The instructor looks at you and says "Why don't we find out? Let's go back to the alien and discuss."
 
       You ignore the instructor's sarcasm when you notice that the alien is chasing after you on foot. You think to yourself, of course it can run fast.
@@ -387,7 +388,7 @@ scenes:
         next_scene: within_speed_limit
 
   - name: accelerate
-    text: |
+    text: |-
       The instruct shouts, "What are you doing? You know the speed limit is 40 miles per hour, right? You are already at the speed limit. If you go any further, I will have to fail you.".
 
       After hearing this, you accept your fate and keep driving at the speed limit.
@@ -400,7 +401,7 @@ scenes:
         next_scene: pull_over_alien
 
   - name: pull_over_alien
-    text: |
+    text: |-
       The alien stands by your window.
 
       And it apologizes to you for crashing with you earlier.
@@ -471,7 +472,7 @@ scenes:
         next_scene: ending_in_jail
 
   - name: ending_in_jail
-    text: |
+    text: |-
       Since your face doesn't look scary enough, the attendant calls the police right in front of you and you eventually end up in jail.
 
       Too bad. You failed the test. Maybe next time don't try to rob the TOTPADLATAT.
@@ -480,7 +481,7 @@ scenes:
         next_scene: end_scene
 
   - name: chicken_out
-    text: |
+    text: |-
       Your nervousness is interfering with your decision making skills.
 
       You start questioning your decision to take the driving test and wonder if you really need a driving license in the first place.
@@ -495,7 +496,7 @@ scenes:
         next_scene: walk_away
 
   - name: walk_away
-    text: |
+    text: |-
       Your nervousness gets the better of you.
 
       You feel overwhelmed. You turn around and start walking away.
@@ -516,7 +517,7 @@ scenes:
         next_scene: end_scene
 
   - name: remind_anime
-    text: |
+    text: |-
       You remind yourself of all the anime that you watched.
 
       Your favourite anime characters always keep persisiting and never give up no matter what.
