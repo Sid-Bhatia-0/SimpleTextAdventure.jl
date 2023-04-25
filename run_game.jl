@@ -31,6 +31,8 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name)
         print(CLEAR_SCREEN)
         print(MOVE_CURSOR_TO_ORIGIN)
         println(scene_text)
+        println()
+        println()
 
         choices = scene["choices"]
         choice = TM.request(TM.RadioMenu([choice["text"] for choice in choices]))
