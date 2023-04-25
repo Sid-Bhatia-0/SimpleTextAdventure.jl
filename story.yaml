@@ -1,9 +1,7 @@
 scenes:
   - name: start_scene
     text: |-
-      ****************
       ***DISCLAIMER***
-      ****************
 
       This is just a game. Obviously. So treat it like one. Definitely don't attempt to apply anything you see in this game to the real world. You may be surprized. It may not work as you expect.
 
