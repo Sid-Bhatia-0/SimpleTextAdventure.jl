@@ -3,9 +3,21 @@ scenes:
     text: |-
       ***DISCLAIMER***
 
-      This is just a game. Obviously. So treat it like one. Definitely don't attempt to apply anything you see in this game to the real world. You may be surprized. It may not work as you expect.
+      This is just a game.
 
-      Also, this game is not meant to hurt anyone. The human co-author of this game is not responsible for anything bad that happens as a result of you playing this game.
+      Obviously.
+
+      So treat it like one.
+
+      Definitely don't attempt to apply anything you see in this game to the real world.
+
+      You may be surprized.
+
+      It may not work as you expect.
+
+      Also, this game is not meant to hurt anyone.
+
+      The human co-author of this game is not responsible for anything bad that happens as a result of you playing this game.
 
       If you understand this and want to continue playing at your own risk, then please by my guest!
 
@@ -25,9 +37,15 @@ scenes:
 
       You ask your friend to go back, assuring that you will get a license this time and drive the car back on your own, like a champion. Your friend has faith in you.
 
-      You still feel a little nervous though. You walk into the office and wait in the first line you see.
+      You still feel a little nervous though.
 
-      There you stand. Alone. With strangers around you.
+      You walk into the office and wait in the first line you see.
+
+      There you stand.
+
+      Alone.
+
+      With strangers around you.
 
       Your turn comes soon.
     choices:
@@ -57,7 +75,10 @@ scenes:
         next_scene: waiting_for_instructor
 
   - name: waiting_for_instructor
-    text: You take your car to the back side of the building where you notice a few cars already in line. You move your card to the end of the queue.
+    text: |-
+      You take your car to the back side of the building where you notice a few cars already in line.
+
+      You move your card to the end of the queue.
     choices:
       - text: Wait for your turn to come...
         next_scene: your_turn
@@ -68,7 +89,9 @@ scenes:
 
       But this time, you won't let it interfere.
 
-      It is finally your turn to move to the front of the line. As you are thinking about pushing away the nervousness, your feet accidentally push the accelerator a little too hard.
+      It is finally your turn to move to the front of the line.
+
+      As you are thinking about pushing away the nervousness, your feet accidentally push the accelerator a little too hard.
 
       You almost bump the car into the instructor as he moves towards you.
     choices:
@@ -100,7 +123,10 @@ scenes:
         next_scene: reckless_driving_crashing_with_alien
 
   - name: cautious_driving
-    text: You drive carefully and follow all traffic rules. The instructor seems satisfied.
+    text: |-
+      You drive carefully and follow all traffic rules.
+
+      The instructor seems satisfied.
     choices:
       - text: Keep driving
         next_scene: parking_test
@@ -119,7 +145,9 @@ scenes:
 
       You remember to put the gears into parking and pull the hand brake.
 
-      The instructor is pleased. Then he asks you to move on.
+      The instructor is pleased.
+
+      Then he asks you to move on.
     choices:
       - text: Continue driving
         next_scene: going_back
@@ -146,7 +174,9 @@ scenes:
 
   - name: nailed_it
     text: |-
-      Congratulations! You nailed it this time.
+      Congratulations!
+
+      You nailed it this time.
 
       Wasn't that easy?
 
@@ -171,18 +201,26 @@ scenes:
 
       So you turn your wheel and keep going.
 
-      This produces a screeching sound. Not a good sign.
+      This produces a screeching sound.
+
+      Not a good sign.
 
       Nevertheless, you somehow manage to park the vehicle.
 
-      It isn't parallel to the curb. But that is not the most pressing concern anymore.
+      It isn't parallel to the curb.
+
+      But that is not the most pressing concern anymore.
     choices:
       - text: Look at the instructor like nothing happened
         next_scene: instructor_look
 
   - name: instructor_look
     text: |-
-      The instructor stays calm. Unsurprisingly perhaps. Because it is not his vehicle.
+      The instructor stays calm.
+
+      Unsurprisingly perhaps.
+
+      Because it is not his vehicle.
 
       And in a matter of factly tone, says..."You know you messed it up, right?"
 
@@ -195,7 +233,11 @@ scenes:
     text: |-
       Once you reach there, he asks you to practice more before next time.
 
-      You failed... follow the instructor's advice for next time. Okay?
+      You failed...
+
+      Follow the instructor's advice for next time.
+
+      Okay?
     choices:
       - text: Call your friend to come pick you up along with the car
         next_scene: end_scene
@@ -250,7 +292,9 @@ scenes:
     text: |-
       You approach the alien and apologize for hitting its spaceship.
 
-      The alien looks at you, then starts laughing uncontrollably. "Oh, you Earthlings are hilarious!" it says. "I wasn't even driving that thing! I just borrowed it from my friend Zorgon!"
+      The alien looks at you, then starts laughing uncontrollably.
+
+      "Oh, you Earthlings are hilarious!" it says. "I wasn't even driving that thing! I just borrowed it from my friend Zorgon!"
     choices:
       - text: Offer to give the alien a ride to wherever it needs to go
         next_scene: give_alien_ride
@@ -293,7 +337,9 @@ scenes:
 
       Instructor informs you that you already successfully completed all the components involved in the test as you were dropping off the alien.
 
-      Plus he thinks that you also did a good deed. So he is pleased.
+      Plus he thinks that you also did a good deed.
+
+      So he is pleased.
 
       The instructor guides you back to the TOTPADLATAT and hands you your driving license.
     choices:
@@ -314,7 +360,8 @@ scenes:
         next_scene: back_to_earth_panic
 
   - name: space_souvenir
-    text: The alien laughs and hands you a small, glowing rock... "Here you go, Earthling. This is a rare mineral from my home planet. It's supposed to bring good luck!"
+    text: |-
+      The alien laughs and hands you a small, glowing rock... "Here you go, Earthling. This is a rare mineral from my home planet. It's supposed to bring good luck!"
 
       You thank the alien and put the rock in your pocket.
 
@@ -333,13 +380,21 @@ scenes:
         next_scene: forgot_about_test_but_had_fun
 
   - name: forgot_about_test_but_had_fun
-    text: You forgot about your car and the driving test. But you had a lot of fun.
+    text: |-
+      You forgot about your car and the driving test.
+
+      But you had a lot of fun.
     choices:
       - text: Book another the driving test slot, secretly hoping for another adventure...
         next_scene: end_scene
 
   - name: back_to_earth_panic
-    text: You feel sick as soon as you land. The alien informs you that this is normal. You will feel better after resting.
+    text: |-
+      You feel sick as soon as you land.
+
+      The alien informs you that this is normal.
+
+      You will feel better after resting.
     choices:
       - text: Go back home and rest as alien suggested
         next_scene: go_back_home_and_rest
@@ -350,7 +405,9 @@ scenes:
 
       You inform the instructor who was surprisingly waiting for you back on land.
 
-      You request him to drop you home. He is kind enough to oblige and asks you to take care.
+      You request him to drop you home.
+
+      He is kind enough to oblige and asks you to take care.
 
       You think to yourself that even though you did not pass the test, it was a hell of an experience.
     choices:
@@ -376,9 +433,13 @@ scenes:
     text: |-
       The instructor looks at you and says "Why don't we find out? Let's go back to the alien and discuss."
 
-      You ignore the instructor's sarcasm when you notice that the alien is chasing after you on foot. You think to yourself, of course it can run fast.
+      You ignore the instructor's sarcasm when you notice that the alien is chasing after you on foot.
 
-      You want to speed up to escape the alien, but you don't wanna fail your driving test. So you carefully stay within the speed limit.
+      You think to yourself, of course it can run fast.
+
+      You want to speed up to escape the alien, but you don't wanna fail your driving test.
+
+      So you carefully stay within the speed limit.
     choices:
       - text: Attempt to accelerate beyond the speed limit
         next_scene: accelerate
@@ -448,7 +509,10 @@ scenes:
         next_scene: start_test
 
   - name: ending_in_anger
-    text: You hold on to your vow and never return back. Hence you never get a driving license.
+    text: |-
+      You hold on to your vow and never return back.
+
+      Hence you never get a driving license.
     choices:
       - text: Rely on your friends and public transport for your entire life...
         next_scene: end_scene
@@ -473,7 +537,11 @@ scenes:
     text: |-
       Since your face doesn't look scary enough, the attendant calls the police right in front of you and you eventually end up in jail.
 
-      Too bad. You failed the test. Maybe next time don't try to rob the TOTPADLATAT.
+      Too bad.
+
+      You failed the test.
+
+      Maybe next time don't try to rob the TOTPADLATAT.
     choices:
       - text: Spend time in jail
         next_scene: end_scene
@@ -486,7 +554,11 @@ scenes:
 
       You also remember that the fees has already been paid, and that it is non-refundable.
 
-      Act fast. Or not. The officer is calling you to come forward.
+      Act fast.
+
+      Or not.
+
+      The officer is calling you to come forward.
     choices:
       - text: Walk up to the counter to not let the fees go to waste
         next_scene: first_counter
@@ -497,7 +569,9 @@ scenes:
     text: |-
       Your nervousness gets the better of you.
 
-      You feel overwhelmed. You turn around and start walking away.
+      You feel overwhelmed.
+
+      You turn around and start walking away.
 
       The officer stops calling you and the lady behind you in line moves forward to the counter.
 
@@ -509,7 +583,10 @@ scenes:
         next_scene: remind_anime
 
   - name: give_up_without_trying
-    text: You exit the door feeling ashamed of yourself. But you also promise to yourself that you will try harder next time. 
+    text: |-
+      You exit the door feeling ashamed of yourself.
+
+      But you also promise to yourself that you will try harder next time.
     choices:
       - text: Awkwardly call your friend to come and pick you up...
         next_scene: end_scene
