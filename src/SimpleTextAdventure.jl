@@ -1,3 +1,5 @@
+module SimpleTextAdventure
+
 import REPL.TerminalMenus as TM
 import YAML
 
@@ -43,8 +45,4 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name)
     return nothing
 end
 
-story_file_name = ARGS[1]
-
-scene_graph = create_scene_graph(story_file_name)
-
-run_scene_graph(scene_graph, "start_scene", "end_scene")
+end # module
