@@ -1,3 +1,2 @@
 [deps]
-REPL = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
-YAML = "ddb6d928-2868-570f-bddf-ab3f9cf99eb6"
+SimpleTextAdventure = "f7fe5873-c891-4e00-a3c3-ac9d0bca5d17"
