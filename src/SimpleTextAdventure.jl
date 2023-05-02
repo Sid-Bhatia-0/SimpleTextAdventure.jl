@@ -23,7 +23,7 @@ function create_scene_graph(file_name)
     return scene_graph
 end
 
-function run_scene_graph(scene_graph, start_scene_name, end_scene_name)
+function run_scene_graph(scene_graph, start_scene_name, end_scene_name, character_delay)
     scene_name = start_scene_name
 
     terminal = TM.terminal
@@ -43,7 +43,7 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name)
         for char in scene_text
             print(terminal_out, char)
             if iszero(bytesavailable(terminal_in))
-                sleep(0.01)
+                sleep(character_delay)
             end
         end
 
