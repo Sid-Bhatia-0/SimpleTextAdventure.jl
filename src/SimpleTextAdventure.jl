@@ -21,16 +21,16 @@ function create_scene_graph(file_name)
 end
 
 function run_scene_graph(scene_graph, start_scene_name, end_scene_name, animation_delay)
-    current_scene_name = start_scene_name
-
     terminal = TM.terminal
     terminal_out = terminal.out_stream
     terminal_in = terminal.in_stream
 
-    while current_scene_name != end_scene_name
-        scene = scene_graph[current_scene_name]
+    current_scene_name = start_scene_name
 
-        scene_text = scene["text"]
+    while current_scene_name != end_scene_name
+        current_scene = scene_graph[current_scene_name]
+
+        scene_text = current_scene["text"]
         print(terminal_out, CLEAR_SCREEN)
         print(terminal_out, MOVE_CURSOR_TO_ORIGIN)
 
@@ -53,7 +53,7 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name, animatio
         Base.stop_reading(terminal_in)
         Terminals.raw!(terminal, false)
 
-        choices = scene["choices"]
+        choices = current_scene["choices"]
         choice = TM.request(TM.RadioMenu([choice["text"] for choice in choices]))
 
         current_scene_name = choices[choice]["next_scene"]
