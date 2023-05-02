@@ -54,9 +54,9 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name, animatio
         Terminals.raw!(terminal, false)
 
         current_scene_choices = current_scene["choices"]
-        choice = TM.request(TM.RadioMenu([choice["text"] for choice in current_scene_choices]))
+        selected_choice = TM.request(TM.RadioMenu([choice["text"] for choice in current_scene_choices]))
 
-        current_scene_name = current_scene_choices[choice]["next_scene"]
+        current_scene_name = current_scene_choices[selected_choice]["next_scene"]
     end
 
     return nothing
