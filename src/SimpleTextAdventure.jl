@@ -1,6 +1,6 @@
 module SimpleTextAdventure
 
-import REPL
+import REPL.Terminals as Terminals
 import REPL.TerminalMenus as TM
 import YAML
 
@@ -37,7 +37,7 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name, characte
         print(terminal_out, CLEAR_SCREEN)
         print(terminal_out, MOVE_CURSOR_TO_ORIGIN)
 
-        REPL.Terminals.raw!(terminal, true)
+        Terminals.raw!(terminal, true)
         Base.start_reading(terminal_in)
 
         for char in scene_text
@@ -54,7 +54,7 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name, characte
         read(terminal_in, bytesavailable(terminal_in))
 
         Base.stop_reading(terminal_in)
-        REPL.Terminals.raw!(terminal, false)
+        Terminals.raw!(terminal, false)
 
         choices = scene["choices"]
         choice = TM.request(TM.RadioMenu([choice["text"] for choice in choices]))
