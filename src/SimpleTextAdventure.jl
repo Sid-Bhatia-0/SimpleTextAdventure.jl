@@ -30,14 +30,14 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name, animatio
     while current_scene_name != end_scene_name
         current_scene = scene_graph[current_scene_name]
 
-        scene_text = current_scene["text"]
+        current_scene_text = current_scene["text"]
         print(terminal_out, CLEAR_SCREEN)
         print(terminal_out, MOVE_CURSOR_TO_ORIGIN)
 
         Terminals.raw!(terminal, true)
         Base.start_reading(terminal_in)
 
-        for char in scene_text
+        for char in current_scene_text
             print(terminal_out, char)
             if iszero(bytesavailable(terminal_in))
                 sleep(animation_delay)
