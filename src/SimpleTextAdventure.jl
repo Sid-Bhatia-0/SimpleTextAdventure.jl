@@ -1,15 +1,12 @@
 module SimpleTextAdventure
 
-import REPL
+import REPL.Terminals as Terminals
 import REPL.TerminalMenus as TM
 import YAML
 
 const ESC = Char(0x1B)
-const HIDE_CURSOR = ESC * "[?25l"
-const SHOW_CURSOR = ESC * "[?25h"
 const CLEAR_SCREEN = ESC * "[2J"
 const MOVE_CURSOR_TO_ORIGIN = ESC * "[H"
-const CLEAR_SCREEN_BEFORE_CURSOR = ESC * "[1J"
 
 function create_scene_graph(file_name)
     contents = YAML.load_file(file_name)
@@ -23,27 +20,27 @@ function create_scene_graph(file_name)
     return scene_graph
 end
 
-function run_scene_graph(scene_graph, start_scene_name, end_scene_name, character_delay)
-    scene_name = start_scene_name
-
+function run_scene_graph(scene_graph; start_scene_name = "start_scene", end_scene_name = "end_scene", animation_delay = 0.01)
     terminal = TM.terminal
     terminal_out = terminal.out_stream
     terminal_in = terminal.in_stream
 
-    while scene_name != end_scene_name
-        scene = scene_graph[scene_name]
+    current_scene_name = start_scene_name
 
-        scene_text = scene["text"]
+    while current_scene_name != end_scene_name
+        current_scene = scene_graph[current_scene_name]
+
+        current_scene_text = current_scene["text"]
         print(terminal_out, CLEAR_SCREEN)
         print(terminal_out, MOVE_CURSOR_TO_ORIGIN)
 
-        REPL.Terminals.raw!(terminal, true)
+        Terminals.raw!(terminal, true)
         Base.start_reading(terminal_in)
 
-        for char in scene_text
+        for char in current_scene_text
             print(terminal_out, char)
             if iszero(bytesavailable(terminal_in))
-                sleep(character_delay)
+                sleep(animation_delay)
             end
         end
 
@@ -54,12 +51,12 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name, characte
         read(terminal_in, bytesavailable(terminal_in))
 
         Base.stop_reading(terminal_in)
-        REPL.Terminals.raw!(terminal, false)
+        Terminals.raw!(terminal, false)
 
-        choices = scene["choices"]
-        choice = TM.request(TM.RadioMenu([choice["text"] for choice in choices]))
+        current_scene_choices = current_scene["choices"]
+        selected_choice = TM.request(TM.RadioMenu([choice["text"] for choice in current_scene_choices]))
 
-        scene_name = choices[choice]["next_scene"]
+        current_scene_name = current_scene_choices[selected_choice]["next_scene"]
     end
 
     return nothing
