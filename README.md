@@ -31,7 +31,7 @@ julia --project=.
 1. Exit the REPL and run the following command in the `examples` directory
 
 ```
-julia --project=. run_game.jl story.yaml
+julia --project=. play.jl story.yaml
 ```
 
 This will start the game inside the terminal.
