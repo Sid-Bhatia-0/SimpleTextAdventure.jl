@@ -21,14 +21,14 @@ function create_scene_graph(file_name)
 end
 
 function run_scene_graph(scene_graph, start_scene_name, end_scene_name, animation_delay)
-    scene_name = start_scene_name
+    current_scene_name = start_scene_name
 
     terminal = TM.terminal
     terminal_out = terminal.out_stream
     terminal_in = terminal.in_stream
 
-    while scene_name != end_scene_name
-        scene = scene_graph[scene_name]
+    while current_scene_name != end_scene_name
+        scene = scene_graph[current_scene_name]
 
         scene_text = scene["text"]
         print(terminal_out, CLEAR_SCREEN)
@@ -56,7 +56,7 @@ function run_scene_graph(scene_graph, start_scene_name, end_scene_name, animatio
         choices = scene["choices"]
         choice = TM.request(TM.RadioMenu([choice["text"] for choice in choices]))
 
-        scene_name = choices[choice]["next_scene"]
+        current_scene_name = choices[choice]["next_scene"]
     end
 
     return nothing
