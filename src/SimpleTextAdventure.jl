@@ -5,11 +5,8 @@ import REPL.TerminalMenus as TM
 import YAML
 
 const ESC = Char(0x1B)
-const HIDE_CURSOR = ESC * "[?25l"
-const SHOW_CURSOR = ESC * "[?25h"
 const CLEAR_SCREEN = ESC * "[2J"
 const MOVE_CURSOR_TO_ORIGIN = ESC * "[H"
-const CLEAR_SCREEN_BEFORE_CURSOR = ESC * "[1J"
 
 function create_scene_graph(file_name)
     contents = YAML.load_file(file_name)
