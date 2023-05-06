@@ -20,7 +20,7 @@ function create_scene_graph(file_name)
     return scene_graph
 end
 
-function run_scene_graph(scene_graph; start_scene_name = "start_scene", end_scene_name = "end_scene", animation_delay = 0.01)
+function run_scene_graph(scene_graph; start_scene_name = "START_GAME", end_scene_name = "END_GAME", animation_delay = 0.01)
     terminal = TM.terminal
     terminal_out = terminal.out_stream
     terminal_in = terminal.in_stream
