@@ -35,3 +35,39 @@ julia --project=. play.jl story.yaml
 ```
 
 This will start the game inside the terminal.
+
+## Compile the app
+
+To compile the engine into a standalone executable (for your OS)
+
+1. Clone the repository
+
+```
+git clone https://github.com/Sid-Bhatia-0/SimpleTextAdventure.jl.git
+```
+
+1. Go to the `compile` directory and run the following
+
+```
+julia --project=.
+```
+
+1. Instantiate the project after going into `Pkg` mode by pressing `]`
+
+```
+(compile) pkg> instantiate
+```
+
+1. Exit the REPL and run the following command in the `compile` directory
+
+```
+julia --project=. compile.jl
+```
+
+This will create a directory called `SimpleTextAdventureAppCompiled` inside the `compile` directory.
+
+To run the example game with the compiled app, go to `SimpleTextAdventureAppCompiled/bin` and run the following:
+
+```
+./SimpleTextAdventureApp ../../../examples/story.yaml
+```
