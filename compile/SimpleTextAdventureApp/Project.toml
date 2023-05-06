@@ -1,0 +1,7 @@
+name = "SimpleTextAdventureApp"
+uuid = "59694f76-1ae5-4fa6-97d5-0494aa9d7606"
+authors = ["Siddharth Bhatia <sidb60200@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+SimpleTextAdventure = "f7fe5873-c891-4e00-a3c3-ac9d0bca5d17"
