@@ -1,5 +1,6 @@
+animation_delay: 0.01
 scenes:
-  - name: start_scene
+  - name: START_GAME
     text: |-
       ***DISCLAIMER***
 
@@ -25,7 +26,7 @@ scenes:
       - text: Yes. I'm up for it. Take me to the game. I'm already enjoying this.
         next_scene: introduction
       - text: No. I think I can live without knowing what's in the game. I would like to exit the game. Please.
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: introduction
     text: |-
@@ -183,13 +184,13 @@ scenes:
       A little too easy perhaps...
     choices:
       - text: Drive off into the sunset to celebrate your success
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: passed_parking_test
     text: You nail the parking test and the instructor tells you that you've passed!
     choices:
       - text: Celebrate and drive off into the sunset...
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: terrible_parking
     text: |-
@@ -240,7 +241,7 @@ scenes:
       Okay?
     choices:
       - text: Call your friend to come pick you up along with the car
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: reckless_driving_crashing_with_alien
     text: |-
@@ -273,7 +274,7 @@ scenes:
       The instructor guides you back to the TOTPADLATAT and hands you your driving license.
     choices:
       - text: Accept it and rejoice!
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: hit_spaceship
     text: |-
@@ -344,7 +345,7 @@ scenes:
       The instructor guides you back to the TOTPADLATAT and hands you your driving license.
     choices:
       - text: Thank the instructor and feel proud of yourself
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: go_for_ride
     text: |-
@@ -386,7 +387,7 @@ scenes:
       But you had a lot of fun.
     choices:
       - text: Book another the driving test slot, secretly hoping for another adventure...
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: back_to_earth_panic
     text: |-
@@ -412,7 +413,7 @@ scenes:
       You think to yourself that even though you did not pass the test, it was a hell of an experience.
     choices:
       - text: Lie on your bed, drifting into sleep...
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: run_away
     text: |-
@@ -484,7 +485,7 @@ scenes:
     text: The instructor is creeped out by your behavior and calls off the driving test.
     choices:
       - text: Leave the TOTPADLATAT feeling embarrassed
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: correct_the_instructor_aggressively
     text: The instructor looks at you incredulously starts arguing with you telling you that you went too fast.
@@ -515,7 +516,7 @@ scenes:
       Hence you never get a driving license.
     choices:
       - text: Rely on your friends and public transport for your entire life...
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: surprized_attendant
     text: "\"Excuse me!? What do you mean?\", the attendant exclaims."
@@ -544,7 +545,7 @@ scenes:
       Maybe next time don't try to rob the TOTPADLATAT.
     choices:
       - text: Spend time in jail
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: chicken_out
     text: |-
@@ -589,7 +590,7 @@ scenes:
       But you also promise to yourself that you will try harder next time.
     choices:
       - text: Awkwardly call your friend to come and pick you up...
-        next_scene: end_scene
+        next_scene: END_GAME
 
   - name: remind_anime
     text: |-
@@ -608,4 +609,4 @@ scenes:
     text: Sorry. This scene is not implemented yet.
     choices:
       - text: Press enter to exit the game...
-        next_scene: end_scene
+        next_scene: END_GAME

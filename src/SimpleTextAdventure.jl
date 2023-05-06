@@ -11,16 +11,18 @@ const MOVE_CURSOR_TO_ORIGIN = ESC * "[H"
 function create_scene_graph(file_name)
     contents = YAML.load_file(file_name)
 
+    animation_delay = contents["animation_delay"]
+
     scene_graph = Dict{Any, Any}()
 
     for scene in contents["scenes"]
         scene_graph[scene["name"]] = scene
     end
 
-    return scene_graph
+    return scene_graph, animation_delay
 end
 
-function run_scene_graph(scene_graph; start_scene_name = "start_scene", end_scene_name = "end_scene", animation_delay = 0.01)
+function run_scene_graph(scene_graph, animation_delay; start_scene_name = "START_GAME", end_scene_name = "END_GAME")
     terminal = TM.terminal
     terminal_out = terminal.out_stream
     terminal_in = terminal.in_stream
@@ -37,10 +39,14 @@ function run_scene_graph(scene_graph; start_scene_name = "start_scene", end_scen
         Terminals.raw!(terminal, true)
         Base.start_reading(terminal_in)
 
-        for char in current_scene_text
-            print(terminal_out, char)
-            if iszero(bytesavailable(terminal_in))
-                sleep(animation_delay)
+        if iszero(animation_delay)
+            print(terminal_out, current_scene_text)
+        else
+            for char in current_scene_text
+                print(terminal_out, char)
+                if iszero(bytesavailable(terminal_in))
+                    sleep(animation_delay)
+                end
             end
         end
 
