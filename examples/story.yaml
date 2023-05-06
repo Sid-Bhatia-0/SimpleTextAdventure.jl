@@ -1,3 +1,4 @@
+animation_delay: 0.01
 scenes:
   - name: START_GAME
     text: |-
